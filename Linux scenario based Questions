@@ -1,0 +1,29 @@
+1) what could be the reason if user is not able to ssh into remote machine?
+   >check the permission of the pem or ppk key to chmod 400 
+   >next check the configurations (vim /etc/ssh/sshd_config)
+        > check the ssh is listining in port number is 22, publickey autherioziation is yes ,check the ssh Authorizedkey file path,
+        > check any DenyUsers Guna is given or not
+2) what is the difference between the systemctl start and systemctl enable?
+   >systemctl is used to start the sevice and if we give systemctl enable it will start the service after rebooting the system, automatically it will get start
+3) how will u debug service if its failing while starting?
+   >Journalctl -xeu docker 
+4) lets say u get a alert on your production server that your partincular file system is having disk usage ,how u r going to debug it?
+   >df -h (shows the filesystem usage inn human readable)
+   >du -sh /var/log/* (to check the size of all the files in particular directory)
+5) what kind of issues can prevent you creating a file inside a specific directory?
+   >may be the full of disk space, or no-permission to create a file (ls -latr)
+6) what are inodes?
+   >its the data structure which tracks all the files and directories
+   >df -ih (lists inode size of the filestructure)
+7) what is difference between soft link and hard link?
+   >ln -s file soft_file ([different inode number]rather than copying a file in different directries we can create soft link and we can use it)
+   >ls -laitr
+   >ln file1 hard_file1(hard link same inode number)
+8) what are zombie process?
+   >top  (terminated processes which is totally removed from process table)
+9)how to change default shell for all users on your remote machine?
+  >echo $SHELL (display the shell name)
+  >vi /etc/default/useradd (to change shell for all users)
+10) if a particular process is running from past 2hours what actions will u take in this case?
+    >top  and ps aux | grep java(to get the details of java process)
+    >lsof -p (process id) to list all the files running in this process

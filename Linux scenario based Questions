@@ -27,3 +27,17 @@
 10) if a particular process is running from past 2hours what actions will u take in this case?
     >top  and ps aux | grep java(to get the details of java process)
     >lsof -p (process id) to list all the files running in this process
+11) I  have created passwordless authentication between two linux boxes but still askes password while trying to access?
+    >.ssh directory permission(home folder of user) shoukd have 700 permision, files in it should have 600 permission
+    >check keyfile names and loctaion public and private key placed in correct directries,id_rsa.pub paste in authorized key inside the
+    server,and id_rsa paste in authorized.ssh key
+    >need to check ssh agent on client machine(ssh agent)
+    >check log files in /var/log, check the ssh configuration /etc/ssh/sshd_config (make password authentication false).
+12)user root creatd a file and it should not be accessed by others but only root and another user test can access that file?
+   >create the file sudo touch file1 , sudo chmod 640 file1 and chnage the owner fo the file sudo chown root:test file1
+13)write a commond that will look for file with .sh extensionand has the occurrence of the string "scale" in it?
+   >find ./ -name ".sh" | xargs grep "scale"
+14)how to make a process persistent after shell dies?
+  >Nohup is the tool is used to make the process persistent (command Nohup ls &) "& runns the command at the backend"
+15)how to add user without using useradd commond?
+  >/etc/passwd make a entry in it and /etc/group and passwd user change the password

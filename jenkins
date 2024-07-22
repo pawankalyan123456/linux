@@ -17,5 +17,37 @@
  >sencitive data protections: use api tokens and credentials rather than hard coding it and install only secured plugins.
  >Network security: place jenkins behind the firewall or in a private network,  use HTTPS to encrypt communications between 
  user/agents & jenkins ,take jenkins backups regular basis for disaster management.
-4)
+4)How to optamize jenkins for faster usage ?
+ >parallel test execution: break the test suits into smaller, independent and run them parallel
+ >Distributed Testing: if our jenkins environment has to access multiple nodes or agents distributed test accross these resources.
+ >Optimized Build scripts: review and optimize ur build scripts and ensure ur not performing unnecessary steps or build componenets.
+ >Load Distribution: if possible distribute test accross different times of the day, run criticial tests on regualar hours and 
+  noncritical tests on non peak hours.
+5)what is use of jenkins Home directory?
+ >storage of configuration filees: such as jenkins server settings,installed plugins, and other system wide information.
+ >storage of data: it is used to store the data which is generated durinng its operation such as artifacts ,logs and build histories.
+ >BackUp and restore: it contains the key data files and configurations so its important to keep the jenkins home directory backup to 
+ restore the jenkins if any system failures occurs.
+6)How to use the post section in jenkins to send the notifications in slack?
+ >its a pipeline block in which we can define what steps should be done after the main build.
+  post{
+     always{
+         //this block always will run regardless of the build result
+         slack send(
+            message: "pipeline '$(currentBuild.FullDisplayName) has completed. Result:(currentBuild.Result)",
+            channel: '#general' //the slack channel to send the message to 
+            tokencredentilId: 'slack-token'
+      }
+  }
+7)how will u change the java version on Linux server?
+ >journalctl -xe (its used to query and display the log messages from systemd journal)
+ >sudo alternatives --diaply java(to check available java version), sudo alternatives --config java (to select the latest version of java)
+  java -version (to check  the version).
+8)Helm ?
+ >Helm is a tool that automates the creation ,packaging ,configuration and deployment of kubernets applications by combinig 
+  ur configuration file into a single reusable file.
+9)How to handle configuration in jenkins securily?
+ >we use the jenkins builtin credentials plugins that allows us to define and manage various types of credentials within the jenkins.
+  -manage jenkins-manage credentials-click on global or system domain-select type of credentials u want {username with passwd,secret text
+   ssh username with private key}.
 

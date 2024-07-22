@@ -1,0 +1,21 @@
+1)How to take backup of jenkins data and configuration?
+ >Install Thin BackUp Plugin - configure backup path and shedule to take the backups.
+ >Jenkins backup using disksnapshot -all the configurations are stored in /var/lib/jenkkins folder.
+ >attach external disk to your jenkins server-cretae symboliclink /var/lib/jenkins to /jenkins_data(mount disk to the server on a folder)
+ >in kubernetes ,we can backup the persistent volumes.
+2)How to trigger Build automatically on Github pull request?
+ >Install the Git Hub pull request Builder and manage jenkins- configuresystem- got to Git Hub Pull Requeest Builder (enter github url and cred)
+ >For jenkins to receive PR events through pull request plugin,we need to add jenkins pull request builder payload url in github repo settings
+ >github repo settings-under webhooks,add jenkins pull request builder payload URL.
+ >now in jenkins job configuration add the github URL of project for which we want to trigger the build automatically.
+3)How do ypu ensure the security of jenkins?
+ >keep the jenkins and plugins up to date ,
+ >Access Control and Authentication: use LDAP to ensure only authorized user can access jenkins, ensure complex password policies.
+ >Role Based Access Control: Implement RBAC to define and enforce finr grained permissions for users and groups 
+ & use matrix based security plugins to specify who can perform specific actions>
+ >Audit Trial: Enble jenkins built-in audit logging to monitor user activity
+ >sencitive data protections: use api tokens and credentials rather than hard coding it and install only secured plugins.
+ >Network security: place jenkins behind the firewall or in a private network,  use HTTPS to encrypt communications between 
+ user/agents & jenkins ,take jenkins backups regular basis for disaster management.
+4)
+

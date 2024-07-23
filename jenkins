@@ -3,11 +3,13 @@
  >Jenkins backup using disksnapshot -all the configurations are stored in /var/lib/jenkkins folder.
  >attach external disk to your jenkins server-cretae symboliclink /var/lib/jenkins to /jenkins_data(mount disk to the server on a folder)
  >in kubernetes ,we can backup the persistent volumes.
+
 2)How to trigger Build automatically on Github pull request?
  >Install the Git Hub pull request Builder and manage jenkins- configuresystem- got to Git Hub Pull Requeest Builder (enter github url and cred)
  >For jenkins to receive PR events through pull request plugin,we need to add jenkins pull request builder payload url in github repo settings
  >github repo settings-under webhooks,add jenkins pull request builder payload URL.
  >now in jenkins job configuration add the github URL of project for which we want to trigger the build automatically.
+
 3)How do ypu ensure the security of jenkins?
  >keep the jenkins and plugins up to date ,
  >Access Control and Authentication: use LDAP to ensure only authorized user can access jenkins, ensure complex password policies.
@@ -17,17 +19,20 @@
  >sencitive data protections: use api tokens and credentials rather than hard coding it and install only secured plugins.
  >Network security: place jenkins behind the firewall or in a private network,  use HTTPS to encrypt communications between 
  user/agents & jenkins ,take jenkins backups regular basis for disaster management.
+
 4)How to optamize jenkins for faster usage ?
  >parallel test execution: break the test suits into smaller, independent and run them parallel
  >Distributed Testing: if our jenkins environment has to access multiple nodes or agents distributed test accross these resources.
  >Optimized Build scripts: review and optimize ur build scripts and ensure ur not performing unnecessary steps or build componenets.
  >Load Distribution: if possible distribute test accross different times of the day, run criticial tests on regualar hours and 
   noncritical tests on non peak hours.
+
 5)what is use of jenkins Home directory?
  >storage of configuration filees: such as jenkins server settings,installed plugins, and other system wide information.
  >storage of data: it is used to store the data which is generated durinng its operation such as artifacts ,logs and build histories.
  >BackUp and restore: it contains the key data files and configurations so its important to keep the jenkins home directory backup to 
  restore the jenkins if any system failures occurs.
+
 6)How to use the post section in jenkins to send the notifications in slack?
  >its a pipeline block in which we can define what steps should be done after the main build.
   post{
@@ -43,11 +48,17 @@
  >journalctl -xe (its used to query and display the log messages from systemd journal)
  >sudo alternatives --diaply java(to check available java version), sudo alternatives --config java (to select the latest version of java)
   java -version (to check  the version).
+
 8)Helm ?
  >Helm is a tool that automates the creation ,packaging ,configuration and deployment of kubernets applications by combinig 
   ur configuration file into a single reusable file.
+
 9)How to handle configuration in jenkins securily?
  >we use the jenkins builtin credentials plugins that allows us to define and manage various types of credentials within the jenkins.
   -manage jenkins-manage credentials-click on global or system domain-select type of credentials u want {username with passwd,secret text
    ssh username with private key}.
 
+10)what are the different ways to trigger jenkins pipelines?
+ >poll scm:
+ >build periodiacally:
+ >github webhooks

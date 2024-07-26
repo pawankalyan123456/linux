@@ -36,6 +36,7 @@
 24)How to check if any particular port is listening or not :: netstat -anp | grep 80
 25)du -sh * >> du :: its used to know the disk usage of sum on file in a directroy 
    df -h >> df :: used to know the disk space of the filesystem
-26)journaling :: its the dedicated are in the filesystem which tracks all the changes, bcz of this filesystem corruption is less ()
+26)journaling :: its the dedicated are in the filesystem which tracks all the changes, bcz of this filesystem corruption is less.
+   (journalctl -xeu docker)
 27)if one package is not allowing to do patching >> rpm -ivh vsftpd --nodeps
 28)

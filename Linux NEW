@@ -12,4 +12,17 @@
 9)whch file is used to specify the default gateway :: /etc/sysconfig/network
 10)In RHEL how to switch between 2 run levels :: who -r (to get the runlevels) to change systemctl isolate runlevel3.target (or) systemctl set-default mulri-user.target(or)
    systemctl get-default >>0)halt,1)single-user mode,2)not used(user defined),3)full multi-user mode,4)not used,5)full multi-user graphical mode,6)reboot.
-11)
+11)NFS : network file system which is used share the files and directries to others over a network.port number 2049, install nfs-util package and create a directory and export the directory
+   by editing /etc/exports using (exportfs) commond now restart the service and make it permanent in /etc/fstab file. now set the nfs client configure:: intsall nfs-util and list the mount 
+   exported using (showmount) commond.make dir and mount the nfs.
+12)Nice value :: Its setting priority of the process.valus from -20 to 19 >> nice -n -1 pid , nice -n 19 commond.
+13)ftp : file transfer protocol , portnumber 20,21, it uses TCP protocol, its heaver than tftp
+   tftp: trivial file transfer protocol , portnumber 69, its based on UDP , its light weight.
+14)how to extend the filesystem in linux  :: logical volume management, >>lvextend -L +1G /dev/data_vgO1/data_lvO1 after thhis need to ressize >>resize2fs /dev/data_vgO1/data_lvO1
+15)How to roll back the updated patch :: yum install vsftpd >> yum history >> yum history info 8 >> yum history undo 8.
+16)rsync :: its used for backingup/mirroring the directory tree of file from one server to other server,keeping two machines in sync. {rsync -rv -e ssh /data 192.162.1.10:/root/}
+17)reduce the size of filesystem and this cont be done online :: df -h to check the lv space >>unmount lv >> organize the data using, e2fsck -f /dev/data_vgO1/data_lvO1>>
+  update the filesystem using,resize2fs /dev/data_vgO1/data_vlO1 >> now reduce the size using, vlreduce -L -200M /dev/data_vgO1/data_vlO1
+18)Uptime commond shows the loadaverage of the system in three values in time period of 1min,5min,15min,(1.05,.07,5.90) the load sshould not exceed over 1 check the process
+  which is running for long time or which is not terminated after execution.
+19)

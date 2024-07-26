@@ -39,4 +39,25 @@
 26)journaling :: its the dedicated are in the filesystem which tracks all the changes, bcz of this filesystem corruption is less.
    (journalctl -xeu docker)
 27)if one package is not allowing to do patching >> rpm -ivh vsftpd --nodeps
-28)
+28)Linux Booting Process >> BIOS basic output stream which search for boot loaders and executers and system integerity chceks
+  >>MBR master boot loader which has 512bytes which located in /dev/sda or /dev/hda.
+  >>GRUB its the splash screen shows multiple kernel if its installed /boot/grb/grub.conf
+  >>KERNEL mount the root file system as specified as ROOT in grub.conf,,,it executes /sbin/init
+  >>initrd (intial ram disk) its a temperory rootfile system ,until the kernel is booted and real file system is mounted.
+  >>init and looks at /etc/inittab desiceds the linux on which runlevl to 
+29)what is w commond  :: its the builtin tool which gives the info about ehich user is loggedin ,
+  jcpu > total runtime of all process attached to the user , PCPU > elapsed time for the users current process.
+30)RPM : rehat packaage manager , YUM : yellowdog updater modified
+   >rpm -qa vstpd, rpm -qa --test (to install particular package), rpm -ivh (to check package is consistent or not),yum list installed
+31)ACL how to apply  :: Access control list ,it provides the fine grained access for directries and files for particular users.
+  >create partition and format it with ext4file system, mount a file with ACL.
+  >getfacl <option> <file/directort> options: -d display default ACL, -R recurses into subdirectries.
+  >setfacl <agrument> <option> <file/directory> oprions:-m modify, -x remove ACL, -R recurses
+32)INODE : df -i /dev/sda1, ls -i <file>
+33)crontab -e :*min,*hours,*day of months,*month,*day in week
+34)In prod everonment if any server reboot automatically or done by someone how will u troubleshoot 
+   >last reboot | less or var/log/acpi or /var/log/{messages,syslog,dmesg}
+35)commond to change the user password expire limit : chage -E date <username>
+36)commond to extract the tar file : tar -xvft file.tar | grep filename
+37)commond to check the memory : free -g or free -m
+38)commond to see the architecture of linux : uname -a

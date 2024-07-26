@@ -1,0 +1,15 @@
+1)To set the username and password that never experies :: chage -M -1 user
+2)/etc/passwd and /etc/shadow cannot merge in same file because it has the username and password of the user in it for security reasons
+3)to list number of file opened by particular pid :: lsof -p PID
+4)unable to mount the filesystem what is the reasons?
+  >we might be in the same directory >if some user are present in that directory and usingits content :: fuser -cu /dev/sda >if some of the files are open in that directory :: lsof /dev/sda
+5)what could be the reason if server taking more time :: might be the filesystem was corrupt and ext2 doesnt have journaling feature
+6)we trying to create the file under any partition but we are getting permission denied and there is no permission issue or disk issue :: inode is full (df -i > df -i /ftpusers/)
+7)How to check kernel routing table info :: route -n or netstat -rn or ip route
+8)what is stickybit and difference btween s and S :: its the special permission given to file or directory ,even if any user have full permission they cant delete the file or directory
+  only owner or root have permission to delete it >> symbolic way :: chmod o+t /opt/dump/ or chmod +T /OPT/dump/, >> Numericway :: chmod 1757 /opt/dump/, >> setuid :: chmod 4700 executable
+  >>s is setuid and execuitable & S is setuid and non exexcuitable.
+9)whch file is used to specify the default gateway :: /etc/sysconfig/network
+10)In RHEL how to switch between 2 run levels :: who -r (to get the runlevels) to change systemctl isolate runlevel3.target (or) systemctl set-default mulri-user.target(or)
+   systemctl get-default >>0)halt,1)single-user mode,2)not used(user defined),3)full multi-user mode,4)not used,5)full multi-user graphical mode,6)reboot.
+11)

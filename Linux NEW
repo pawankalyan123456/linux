@@ -25,4 +25,17 @@
   update the filesystem using,resize2fs /dev/data_vgO1/data_vlO1 >> now reduce the size using, vlreduce -L -200M /dev/data_vgO1/data_vlO1
 18)Uptime commond shows the loadaverage of the system in three values in time period of 1min,5min,15min,(1.05,.07,5.90) the load sshould not exceed over 1 check the process
   which is running for long time or which is not terminated after execution.
-19)
+19)how to set the numbering of the file >> :se nu
+20)how to scan the disk in linux :: echo "---" /sys/class/scsi_host/host0,host1/scan
+21)/etc/fstab file having how many fields :: 6 fields >device name >mount point >type of FS >mount option >dumping >checking sequence
+22)soft link :: can be created accross the partition, inode number will be different between the link and sourec< if original file deleted link will not be accessed
+              its like a shortcut file >>ls -s <sourcedir> <destination>
+  Hard link :: cant be created accross the partition,inode number is same, if original file deleted also we can access the data ,its like a backup 
+             >>ln <sourcedir> <destination>
+23)what is the location of NFS shared info :: /etc/fstab
+24)How to check if any particular port is listening or not :: netstat -anp | grep 80
+25)du -sh * >> du :: its used to know the disk usage of sum on file in a directroy 
+   df -h >> df :: used to know the disk space of the filesystem
+26)journaling :: its the dedicated are in the filesystem which tracks all the changes, bcz of this filesystem corruption is less ()
+27)if one package is not allowing to do patching >> rpm -ivh vsftpd --nodeps
+28)
